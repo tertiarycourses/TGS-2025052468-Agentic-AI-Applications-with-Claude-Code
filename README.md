@@ -66,7 +66,7 @@ The current public courseware package (slide deck v18.0, 14 Oct 2026):
 
 | Material | Editable | PDF |
 |---|---|---|
-| Slide deck (69 slides) | [PPTX](<courseware/Agentic AI Applications with Claude Code - v18.pptx>) | [PDF](<courseware/Agentic AI Applications with Claude Code - v18.pdf>) |
+| Slide deck (70 slides) | [PPTX](<courseware/Agentic AI Applications with Claude Code - v18.pptx>) | [PDF](<courseware/Agentic AI Applications with Claude Code - v18.pdf>) |
 | Learner Guide | [DOCX](<courseware/LG-Agentic AI Applications with Claude Code.docx>) | [PDF](<courseware/LG-Agentic AI Applications with Claude Code.pdf>) |
 | Lesson Plan | [DOCX](<courseware/LP-Agentic AI Applications with Claude Code.docx>) | [PDF](<courseware/LP-Agentic AI Applications with Claude Code.pdf>) |
 
@@ -75,7 +75,7 @@ The current public courseware package (slide deck v18.0, 14 Oct 2026):
 ```
 .
 ├── courseware/                  # Trainer & learner materials (DOCX + PDF/PPTX only)
-│   ├── Agentic AI Applications with Claude Code - v18.pptx   # Slide deck (69 slides)
+│   ├── Agentic AI Applications with Claude Code - v18.pptx   # Slide deck (70 slides)
 │   ├── Agentic AI Applications with Claude Code - v18.pdf
 │   ├── LG-Agentic AI Applications with Claude Code.docx      # Learner Guide  (v1.8)
 │   ├── LG-Agentic AI Applications with Claude Code.pdf
