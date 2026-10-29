@@ -62,11 +62,11 @@ By the end of this course, learners will be able to:
 
 ## Courseware
 
-The current public courseware package (slide deck v21.0, 29 Oct 2026):
+The current public courseware package (slide deck v22.0, 29 Oct 2026):
 
 | Material | Editable | PDF |
 |---|---|---|
-| Slide deck (77 slides) | [PPTX](<courseware/Agentic AI Applications with Claude Code - v21.pptx>) | [PDF](<courseware/Agentic AI Applications with Claude Code - v21.pdf>) |
+| Slide deck (79 slides) | [PPTX](<courseware/Agentic AI Applications with Claude Code - v22.pptx>) | [PDF](<courseware/Agentic AI Applications with Claude Code - v22.pdf>) |
 | Learner Guide | [DOCX](<courseware/LG-Agentic AI Applications with Claude Code.docx>) | [PDF](<courseware/LG-Agentic AI Applications with Claude Code.pdf>) |
 | Lesson Plan | [DOCX](<courseware/LP-Agentic AI Applications with Claude Code.docx>) | [PDF](<courseware/LP-Agentic AI Applications with Claude Code.pdf>) |
 
@@ -75,11 +75,11 @@ The current public courseware package (slide deck v21.0, 29 Oct 2026):
 ```
 .
 ├── courseware/                  # Trainer & learner materials (DOCX + PDF/PPTX only)
-│   ├── Agentic AI Applications with Claude Code - v21.pptx   # Slide deck (77 slides)
-│   ├── Agentic AI Applications with Claude Code - v21.pdf
-│   ├── LG-Agentic AI Applications with Claude Code.docx      # Learner Guide  (v1.9)
+│   ├── Agentic AI Applications with Claude Code - v22.pptx   # Slide deck (79 slides)
+│   ├── Agentic AI Applications with Claude Code - v22.pdf
+│   ├── LG-Agentic AI Applications with Claude Code.docx      # Learner Guide  (v2.0)
 │   ├── LG-Agentic AI Applications with Claude Code.pdf
-│   ├── LP-Agentic AI Applications with Claude Code.docx      # Lesson Plan    (v2.0)
+│   ├── LP-Agentic AI Applications with Claude Code.docx      # Lesson Plan    (v2.1)
 │   └── LP-Agentic AI Applications with Claude Code.pdf
 ├── labs/                       # Self-contained learner lab folders
 │   ├── lab1-seven-steps/
