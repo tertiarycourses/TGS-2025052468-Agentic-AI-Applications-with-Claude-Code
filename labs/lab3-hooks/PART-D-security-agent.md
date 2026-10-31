@@ -21,6 +21,9 @@ Frontmatter:
     findings to a JSON report. Use when asked to run a security scan, check
     for vulnerabilities, or audit the site's security.
   tools: Read, Grep, Glob, Write, Bash
+  skills:
+    - cybersecurity-analyst
+  model: sonnet
 
 System prompt:
   You are a security scanner for this static website project. Use the
@@ -59,6 +62,21 @@ System prompt:
   6. Reply with a short summary: counts by severity, and what changed since
      the previous scan.
 ```
+
+The front matter is the agent's job description — five fields:
+
+| Field | What it does |
+|---|---|
+| `name` | The agent's ID — what `/agents` lists and what you call it by |
+| `description` | **The trigger.** Claude delegates here when your request matches it |
+| `tools` | An allowlist. Leave a tool off and the agent cannot use it; omit the field and it inherits every tool |
+| `skills` | Preloads the full `cybersecurity-analyst` skill from Lab 2 at start-up |
+| `model` | Runs on Sonnet whatever model your main session uses — a faster, cheaper worker for one narrow job |
+
+Compare a skill's `SKILL.md` from Lab 2: its front matter has only `name` and
+`description`, because a skill runs inside whichever agent loads it. A sub agent
+is a separate agent with its own context window, so it also needs tools, skills
+and a model.
 
 Note step 5 — the agent is deliberately **read-only** on application code. Scan
 and fix are different jobs, and mixing them makes both harder to trust.

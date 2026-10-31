@@ -1,6 +1,6 @@
 # Lab 1b — Custom Commands & Playwright MCP
 
-**Topic 2 · Tools and Commands — maps to Activity 2 + Activity 3 (slides 40–49)**
+**Topic 2 · Tools and Commands — maps to Activity 2 + Activity 3 (slides 52–61)**
 
 Lab 1 got your site built and deployed. Doing all of that again by hand, every
 time, is exactly the kind of repetition worth automating.

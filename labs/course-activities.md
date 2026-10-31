@@ -370,7 +370,8 @@ Try each one in Claude Code:
      description: UX/UI design agent specialising in oriental Chinese aesthetics
                   with a purple palette. Use when the user asks for an oriental,
                   Chinese, purple, or eastern-inspired UI redesign.
-     tools: all
+     model: sonnet
+   (No tools line — the agent then inherits every tool, including Playwright MCP.)
    Body — instruct the agent to:
    - Use Playwright MCP to screenshot the page first
    - Apply a purple-dominant palette (deep violet, plum, lavender) with gold accents

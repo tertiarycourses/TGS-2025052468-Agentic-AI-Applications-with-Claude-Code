@@ -1,6 +1,6 @@
 # Lab 2 — Agent Skills
 
-**Topic 3 · Skills, Agents & Hooks — maps to Activity 4 (slides 50–53)**
+**Topic 3 · Skills, Agents & Hooks — maps to Activity 4 (slides 62–66)**
 
 Skills are reusable folders of instructions (`SKILL.md`) that teach Claude a
 specialised capability. The important property is the **trigger**: a skill is

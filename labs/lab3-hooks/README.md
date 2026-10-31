@@ -1,6 +1,6 @@
 # Lab 3 — Hooks, Sub Agents & `/loop`
 
-**Topic 3 · Skills, Agents & Hooks — maps to Activity 5 + Activity 6 (slides 54–63)**
+**Topic 3 · Skills, Agents & Hooks — maps to Activity 5 + Activity 6 (slides 67–76)**
 
 This lab covers the last three trigger types, and the contrast between them is
 the whole lesson:

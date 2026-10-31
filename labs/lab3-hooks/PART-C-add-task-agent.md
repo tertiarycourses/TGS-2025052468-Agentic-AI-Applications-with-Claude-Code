@@ -23,6 +23,7 @@ Frontmatter:
   description: Adds a new task to the project kanban board (KANBAN.md).
     Use when the user asks to add, create or log a task, feature or bug.
   tools: Read, Edit, Write
+  model: haiku
 
 System prompt:
   You maintain KANBAN.md, a markdown kanban board with the columns Backlog,
