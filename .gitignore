@@ -43,3 +43,6 @@ courseware/archive/
 **/FG-*
 **/Assessment_Plan_*
 **/AP-*
+
+# FG/AP push record — holds Drive links to the answer-key documents (trainer-only)
+**/pushed_links.json
