@@ -1,7 +1,8 @@
-# Part A — A Completion Hook
+# Part D — A Claude Code Lifecycle Hook
 
-**Objective:** Make Claude Code congratulate you automatically when it finishes a
-task — with no prompting, every single time.
+**Objective:** Parts B and C built hooks that run in the visitor's browser. Now
+build one that runs inside Claude Code itself: it congratulates you automatically
+when a task finishes, with no prompting, every single time.
 
 Hooks are shell commands registered against lifecycle events in
 `.claude/settings.json`. They are **deterministic**: the event fires, the hook
@@ -13,8 +14,8 @@ runs. The model does not get a vote.
 
 | Event | Fires when |
 |---|---|
-| `PreToolUse` | Before a tool runs — can **block** it |
-| `PostToolUse` | After a tool completes |
+| `PreToolUse` | Before a tool runs — can **block** it. Use it to validate |
+| `PostToolUse` | After a tool succeeds — reads the outcome and acts on it, but cannot undo it |
 | `Notification` | When Claude needs input |
 | `Stop` | When Claude finishes responding |
 
@@ -130,4 +131,4 @@ instruction is followed by a model exercising judgement.
 **Checkpoint:** The congratulations dialog fires automatically at the end of
 every task, without being asked.
 
-➡️ Next: [Part B — WhatsApp widget](PART-B-whatsapp-widget.md)
+⬅️ Back: [Part C](PART-C-voice-hook.md) · ➡️ Next: [Part E — Test, secure & deploy](PART-E-final-check.md)

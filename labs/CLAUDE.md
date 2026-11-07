@@ -16,9 +16,8 @@ lab1-seven-steps/     Lab 1 (Topic 1) — the 7-step build workflow
   steps/                STEP-1..STEP-7, one file per step
   reference-site/       finished deliverable (NorthPoint Systems)
   sample-sites/         bride-booking, interior-design, lead-generation
-lab1b-commands-mcp/   Lab 1b (Topic 2) — /publish command + Playwright MCP
-lab2-skills/          Lab 2 (Topic 3) — cybersecurity / kanban / ui-ux skills
-lab3-hooks/           Lab 3 (Topic 3) — hooks, sub agents, /loop
+lab2-commands-tools-skills/  Lab 2 (Topic 2) — /gitpush command, Playwright MCP, skills
+lab3-agents-hooks-security/  Lab 3 (Topic 3) — sub agents, hooks, security controls
 course-activities.md  legacy single-file walkthrough (superseded)
 ```
 
@@ -43,8 +42,9 @@ never be committed.
 
 ## Alignment
 
-The labs mirror the course deck and Learner Guide. Lab 1 = Activity 1A/1B,
-Lab 1b = Activities 2/3, Lab 2 = Activity 4, Lab 3 = Activities 5/6. If a lab
+The labs mirror the course deck and Learner Guide. One topic, one activity, one
+lab, one PP task: Lab 1 = Activity 1 = PP Task 1, Lab 2 = Activity 2 = PP Task 2,
+Lab 3 = Activity 3 = PP Task 3. If a lab
 changes, the corresponding activity slide and LG section must change with it.
 
 ## Do not

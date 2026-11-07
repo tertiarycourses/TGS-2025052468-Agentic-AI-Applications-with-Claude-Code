@@ -19,9 +19,9 @@
 
 ## About This Course
 
-A hands-on, one-day WSQ course on building real applications with **Claude Code**, Anthropic's agentic coding tool. Learners go from a plain-English goal to a deployed, tested website using the agentic loop, context engineering, custom slash commands, MCP tools, agent skills, sub agents and hooks.
+A hands-on, one-day WSQ course on building real applications with **Claude Code**, Anthropic's agentic coding tool. Learners go from a plain-English goal to a deployed, tested website using the agentic loop, context engineering, custom slash commands, MCP tools, agent skills, sub agents, hooks and AI security controls.
 
-The course is practical throughout — every topic is followed immediately by a lab, culminating in final testing, security, optimisation and deployment checks. It suits developers, technical professionals and technically-minded non-developers who want to work productively with an AI coding agent.
+The course follows one simple structure: one topic, one activity, one lab, one Practical Performance task, culminating in final testing, security and deployment checks. It suits developers, technical professionals and technically-minded non-developers who want to work productively with an AI coding agent.
 
 ## Learning Outcomes
 
@@ -30,24 +30,19 @@ By the end of this course, learners will be able to:
 | # | Learning Outcome |
 |---|---|
 | **LO1** | Explain the agentic loop and apply context-engineering techniques in Claude Code. |
-| **LO2** | Create custom slash commands and connect MCP tools to extend Claude Code. |
-| **LO3** | Use agent skills, sub agents and hooks to automate specialised tasks. |
+| **LO2** | Create custom slash commands, connect MCP tools and apply agent skills to extend Claude Code. |
+| **LO3** | Use sub agents and hooks to automate specialised tasks, and apply AI security controls. |
 | **LO4** | Build, deploy, test, secure and optimise a real website end-to-end with Claude Code. |
 
 ## Course Topics & Labs
 
-| Topic | Covers | Labs |
-|---|---|---|
-| **1 — Claude Code Fundamentals** | The Claude product family — Claude (Chat + Cowork) vs Claude Code; a brief history of AI, 2023–2026 (prompt → context → harness engineering → AI agents); what makes an AI agent — model + harness + tokens, and the seven parts around the model; setup (Terminal, VS Code, Desktop); the agentic loop & built-in tools; context engineering and the context window (`/context`, `/compact`, `/clear`); memory files (`CLAUDE.md` vs auto memory, `/init`, `/memory`); permission modes and the dangers of bypass permissions; sessions, scheduled tasks (Routines) and `/goal`; the 7-step build workflow. | **Lab 1** — Build & deploy a website with the 7-step workflow (Activity 1A/1B) |
-| **2 — Tools and Commands** | The `.claude` directory; custom slash commands and arguments; MCP architecture and connecting servers; Playwright MCP. | **Lab 1b** — A `/publish` custom command + Playwright MCP screenshots into the README (Activities 2, 3, 3B) |
-| **3 — Skills, Agents & Hooks** | Agent skills and installation; inside a `SKILL.md` (front matter: `name`, `description`); `SKILL.md` vs `CLAUDE.md`; sub agents (front matter: `name`, `description`, `tools`, `skills`, `model`) and agent teams; hooks; final testing, optimisation and deployment; a key-concepts recap of **what triggers what** — `CLAUDE.md` (every session), skills & tools (on demand), slash commands (manual), hooks (by event), sub agents (by delegation); and the **5 principles of AI security** — data control, permission control, human in the loop, traceability, and not defaulting to the most powerful models. | **Lab 2** — Install 3 skills & revamp the site (Activity 4)<br>**Lab 3** — Hooks, sub agents and `/loop` (Activities 5, 6) |
+| Topic | Covers | Activity & lab | PP task |
+|---|---|---|---|
+| **1 — Claude Code Fundamentals** | The Claude product family — Claude (Chat + Cowork) vs Claude Code; a brief history of AI, 2023–2026 (prompt → context → harness engineering → AI agents); what makes an AI agent — model + harness + tokens, and the seven parts around the model; setup on four surfaces (Terminal, VS Code, Desktop, and the cloud at `claude.ai/code`); the agentic loop & built-in tools; context engineering and the context window (`/context`, `/compact`, `/clear`); memory files (`CLAUDE.md` vs auto memory, `/init`, `/memory`); permission modes and the dangers of bypass permissions; sessions, scheduled tasks (Routines) and `/goal`; the 7-step build workflow. | **Activity 1 · [Lab 1](labs/lab1-seven-steps/)** — build & deploy a website with the 7-step workflow | **Task 1** — the live site |
+| **2 — Commands, Tools and Skills** | The `.claude` directory; custom slash commands and arguments; MCP architecture and connecting servers; Playwright MCP; agent skills and installation; inside a `SKILL.md` (front matter: `name`, `description`); `SKILL.md` vs `CLAUDE.md`. | **Activity 2 · [Lab 2](labs/lab2-commands-tools-skills/)** — a custom command, Playwright MCP tests, a skill-driven redesign | **Task 2** — the redesigned site |
+| **3 — Agents, Hooks and Security** | Sub agents (front matter: `name`, `description`, `tools`, `skills`, `model`) and agent teams; hooks, with `PreToolUse` and `PostToolUse` use cases; the **5 principles of AI security** — data control, permission control, human in the loop, traceability and right-sized models, one visual slide each; a key-concepts recap of **what triggers what**. | **Activity 3 · [Lab 3](labs/lab3-agents-hooks-security/)** — a security sub agent, your own hooks, then test, secure & deploy | **Task 3** — a hook you built |
 
 > Lab files are included in this repository under [`labs/`](labs/). Each lab lives in its own folder with the exact prompts for every step.
-
-- [Lab 1 — Seven-step build workflow](labs/lab1-seven-steps/)
-- [Lab 1b — Custom commands and MCP](labs/lab1b-commands-mcp/)
-- [Lab 2 — Agent skills](labs/lab2-skills/)
-- [Lab 3 — Hooks and sub agents](labs/lab3-hooks/)
 
 ## Tools Used
 
@@ -62,34 +57,39 @@ By the end of this course, learners will be able to:
 
 ## Courseware
 
-The current public courseware package (slide deck v23.0, 1 Nov 2026):
+The current public courseware package (slide deck v25.0, 7 Nov 2026):
 
 | Material | Editable | PDF |
 |---|---|---|
-| Slide deck (83 slides) | [PPTX](<courseware/Agentic AI Applications with Claude Code - v23.pptx>) | [PDF](<courseware/Agentic AI Applications with Claude Code - v23.pdf>) |
-| Learner Guide | [DOCX](<courseware/LG-Agentic AI Applications with Claude Code.docx>) | [PDF](<courseware/LG-Agentic AI Applications with Claude Code.pdf>) |
-| Lesson Plan | [DOCX](<courseware/LP-Agentic AI Applications with Claude Code.docx>) | [PDF](<courseware/LP-Agentic AI Applications with Claude Code.pdf>) |
+| Slide deck (91 slides) | [PPTX](<courseware/Agentic AI Applications with Claude Code - v25.pptx>) | [PDF](<courseware/Agentic AI Applications with Claude Code - v25.pdf>) |
+| Learner Guide (v2.2) | [DOCX](<courseware/LG-Agentic AI Applications with Claude Code.docx>) | [PDF](<courseware/LG-Agentic AI Applications with Claude Code.pdf>) |
+| Lesson Plan (v2.3) | [DOCX](<courseware/LP-Agentic AI Applications with Claude Code.docx>) | [PDF](<courseware/LP-Agentic AI Applications with Claude Code.pdf>) |
+| Facilitator Guide (v5.0) | [DOCX](<courseware/FG_TGS-2025052468_Agentic AI Applications with Claude Code_v5.docx>) | [PDF](<courseware/FG_TGS-2025052468_Agentic AI Applications with Claude Code_v5.pdf>) |
+
+The Learner Guide is also available as [Markdown](<courseware/LG-Agentic AI Applications with Claude Code.md>).
 
 ## Repository Structure
 
 ```
 .
-├── courseware/                  # Trainer & learner materials (DOCX + PDF/PPTX only)
-│   ├── Agentic AI Applications with Claude Code - v23.pptx   # Slide deck (83 slides)
-│   ├── Agentic AI Applications with Claude Code - v23.pdf
-│   ├── LG-Agentic AI Applications with Claude Code.docx      # Learner Guide  (v2.1)
+├── courseware/                  # Trainer & learner materials
+│   ├── Agentic AI Applications with Claude Code - v25.pptx   # Slide deck (91 slides)
+│   ├── Agentic AI Applications with Claude Code - v25.pdf
+│   ├── LG-Agentic AI Applications with Claude Code.docx      # Learner Guide  (v2.2)
 │   ├── LG-Agentic AI Applications with Claude Code.pdf
-│   ├── LP-Agentic AI Applications with Claude Code.docx      # Lesson Plan    (v2.2)
-│   └── LP-Agentic AI Applications with Claude Code.pdf
-├── labs/                       # Self-contained learner lab folders
+│   ├── LG-Agentic AI Applications with Claude Code.md
+│   ├── LP-Agentic AI Applications with Claude Code.docx      # Lesson Plan    (v2.3)
+│   ├── LP-Agentic AI Applications with Claude Code.pdf
+│   ├── FG_TGS-2025052468_Agentic AI Applications with Claude Code_v5.docx   # Facilitator Guide
+│   └── FG_TGS-2025052468_Agentic AI Applications with Claude Code_v5.pdf
+├── labs/                       # One lab per topic
 │   ├── lab1-seven-steps/
-│   ├── lab1b-commands-mcp/
-│   ├── lab2-skills/
-│   └── lab3-hooks/
+│   ├── lab2-commands-tools-skills/
+│   └── lab3-agents-hooks-security/
 └── README.md
 ```
 
-> **Distribution boundary:** this public repository contains learner-facing courseware and labs only. Assessments and answer keys, source references, internal build tooling and archived versions are deliberately excluded.
+> **Distribution boundary:** this public repository contains the courseware and labs only. The confidential `assessment/` folder (question papers and answer keys), the Assessment Plan, source references, internal build tooling and archived versions are deliberately excluded.
 
 ## Course Details
 

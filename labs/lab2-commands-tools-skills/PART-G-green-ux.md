@@ -1,13 +1,13 @@
-# Part D — Green Redesign with `ui-ux-pro-max`
+# Part G — Green Redesign with `ui-ux-pro-max`
 
 **Objective:** Move the site to a green visual identity and raise its overall
-design quality — without breaking anything you fixed in Parts B and C.
+design quality — without breaking anything you fixed in Parts E and F.
 
 ---
 
 ## Step 1 — Capture the "before"
 
-If you did Lab 1b you already have Playwright MCP installed:
+You installed Playwright MCP in Part B:
 
 **Prompt:**
 
@@ -83,17 +83,19 @@ Then fix the ones you agree with.
 
 ## Step 5 — Ship it
 
-If you built `/publish` in Lab 1b:
+Use the `/gitpush` command you built in Part A:
 
 ```
-/publish
+/gitpush
 ```
 
-Otherwise commit and push, and confirm the live site shows the new design.
+Commit and push if you skipped it, and confirm the live site shows the new design.
+
+> **PP Task 2:** screenshot the redesigned live site now. This is the evidence for Task 2 of the Practical Performance paper.
 
 ---
 
 **Checkpoint:** The site is green, passes AA contrast, still validates the
 enquiry form, and the README shows a before/after comparison.
 
-⬅️ Back: [Part C](PART-C-kanban.md)
+⬅️ Back: [Part F](PART-F-kanban.md)

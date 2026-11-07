@@ -1,4 +1,4 @@
-# Part A — Install the Skills
+# Part D — Install the Skills
 
 **Objective:** Install three community skills at **project level**, so they live
 in the repo and travel with it.
@@ -16,6 +16,14 @@ npx skills add https://github.com/nextlevelbuilder/ui-ux-pro-max-skill --skill u
 ```
 
 Each installs into `.claude/skills/<name>/`.
+
+> **Activity 2D in class** installs these two instead. Run them too if you want to follow
+> the slides:
+>
+> ```bash
+> npx skills add https://github.com/anthropics/skills --skill frontend-design
+> npx skills add https://github.com/coreyhaines31/marketingskills --skill seo-audit
+> ```
 
 > If prompted for an install scope, choose **project** (not user), so the skills
 > are committed with the repository.
@@ -58,4 +66,4 @@ load.
 **Checkpoint:** Three folders under `.claude/skills/`, all three visible to
 Claude after a restart.
 
-➡️ Next: [Part B — Security](PART-B-security.md)
+➡️ Next: [Part E — Security](PART-E-security.md)

@@ -1,10 +1,10 @@
-# Part A — Build a `/publish` Custom Command
+# Part A — Build a `/gitpush` Custom Command
 
 **Objective:** Turn the whole "ship it to GitHub" routine into a single slash
 command you can run forever after.
 
 A custom command is just a Markdown file holding a reusable prompt. It is
-triggered **manually** — nothing happens until you type `/publish`.
+triggered **manually** — nothing happens until you type `/gitpush`.
 
 ---
 
@@ -16,7 +16,7 @@ specify the steps, the more reliably the command behaves.
 **Prompt:**
 
 ```
-Create a project-level custom slash command at .claude/commands/publish.md
+Create a project-level custom slash command at .claude/commands/gitpush.md
 that automates publishing this project to GitHub.
 
 The command must perform these steps IN ORDER, and stop with a clear error if
@@ -77,26 +77,26 @@ Claude Code discovers commands at startup.
 /help
 ```
 
-`/publish` should now appear in the command list.
+`/gitpush` should now appear in the command list.
 
 ---
 
 ## Step 4 — Run it
 
 ```
-/publish
+/gitpush
 ```
 
 Watch it work through the five steps. It should report the security scan
 result, the commit and the live URL.
 
 > **Tip:** if the command does something you did not intend, do not fix the
-> result by hand — edit `.claude/commands/publish.md` and run it again. The
+> result by hand — edit `.claude/commands/gitpush.md` and run it again. The
 > command is the artifact you are building in this lab.
 
 ---
 
-**Checkpoint:** `/publish` appears in `/help`, runs end to end, and your repo now
+**Checkpoint:** `/gitpush` appears in `/help`, runs end to end, and your repo now
 has a README, a deploy workflow and a filled-in About section.
 
 ➡️ Next: [Part B — Playwright MCP](PART-B-playwright-mcp.md)

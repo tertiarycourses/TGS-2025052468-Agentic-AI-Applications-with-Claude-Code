@@ -1,4 +1,4 @@
-# Part D — A Security-Scan Sub Agent
+# Part A — A Security-Scan Sub Agent
 
 **Objective:** Build a sub agent that runs a security scan using the
 `cybersecurity-analyst` skill from Lab 2 and writes its findings to JSON.
@@ -146,4 +146,4 @@ security-scanner agent again to confirm they are resolved.
 **Checkpoint:** `security-scan.json` exists, is valid JSON, and findings
 correctly change status between runs.
 
-⬅️ Back: [Part C](PART-C-add-task-agent.md) · ➡️ Next: [Part E — /loop](PART-E-loop.md)
+➡️ Next: [Part B — Pop-up hook](PART-B-popup-hook.md)

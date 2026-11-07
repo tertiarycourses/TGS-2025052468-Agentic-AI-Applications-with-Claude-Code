@@ -37,12 +37,10 @@ courseware/archive/
 # Local environment (course + Drive links, written by gdrive_push.py)
 .env
 
-# Facilitator Guide + Assessment Plan embed the answer keys and rubric:
+# The Assessment Plan embeds the answer keys and rubric:
 # trainer-only (Google Drive + TMS), never GitHub
-**/FG_*
-**/FG-*
 **/Assessment_Plan_*
 **/AP-*
 
-# FG/AP push record — holds Drive links to the answer-key documents (trainer-only)
+# FG/AP push record — holds Drive links to trainer-only documents
 **/pushed_links.json

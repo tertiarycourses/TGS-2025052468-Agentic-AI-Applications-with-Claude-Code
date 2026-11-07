@@ -1,4 +1,4 @@
-# Part B — Harden the Site with `cybersecurity-analyst`
+# Part E — Harden the Site with `cybersecurity-analyst`
 
 **Objective:** Run a real security review over the Lab 1 site and fix what it
 finds — without ever naming the skill.
@@ -81,4 +81,4 @@ fixed, and what is intentionally out of scope for a static site.
 **Checkpoint:** Real issues fixed, the form still works, and `SECURITY.md`
 records the review.
 
-⬅️ Back: [Part A](PART-A-install-skills.md) · ➡️ Next: [Part C — Kanban](PART-C-kanban.md)
+⬅️ Back: [Part D](PART-D-install-skills.md) · ➡️ Next: [Part F — Kanban](PART-F-kanban.md)

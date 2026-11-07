@@ -1,4 +1,4 @@
-# Part E — `/loop` the Security Agent
+# Part G (take-home) — `/loop` the Security Agent
 
 **Objective:** Keep the security scan running on a schedule, so regressions are
 caught without anyone remembering to look.
@@ -110,4 +110,4 @@ confirmed the fix, and you stopped it cleanly.
 
 You have now used every extension mechanism in the course on one real project.
 
-⬅️ Back: [Part D](PART-D-security-agent.md)
+⬅️ Back: [Part F](PART-F-add-task-agent.md)

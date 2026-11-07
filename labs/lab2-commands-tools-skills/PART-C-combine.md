@@ -1,4 +1,4 @@
-# Part C — Fold the Screenshot into `/publish`
+# Part C — Fold the Screenshot into `/gitpush`
 
 **Objective:** Make the screenshot refresh automatic, so the README never shows
 a stale picture of the site.
@@ -13,7 +13,7 @@ one-off. Combine them.
 **Prompt:**
 
 ```
-Update .claude/commands/publish.md to add a screenshot step.
+Update .claude/commands/gitpush.md to add a screenshot step.
 
 Insert it AFTER the GitHub Pages deployment step and BEFORE the README step,
 because the screenshot must reflect the newly deployed site:
@@ -41,7 +41,7 @@ pushed — so the images in the README match the deployed site.
 Restart Claude Code, then:
 
 ```
-/publish
+/gitpush
 ```
 
 ---
@@ -60,7 +60,7 @@ the full publish workflow.
 Then:
 
 ```
-/publish
+/gitpush
 ```
 
 Now check on github.com:
@@ -80,7 +80,7 @@ That last one is the point of this lab — the documentation updated itself.
 your-project/
 ├── .claude/
 │   └── commands/
-│       └── publish.md          # manual trigger — /publish
+│       └── gitpush.md          # manual trigger — /gitpush
 ├── .mcp.json                   # on-demand trigger — Playwright MCP
 ├── .github/workflows/
 │   └── deploy.yml              # event trigger — push to main
@@ -94,8 +94,8 @@ Three different trigger types, cooperating in one workflow.
 
 ---
 
-**Checkpoint:** A single `/publish` scans for secrets, commits, pushes, deploys,
+**Checkpoint:** A single `/gitpush` scans for secrets, commits, pushes, deploys,
 waits for the deploy, re-screenshots the live site, updates the README and
 pushes the refreshed images.
 
-⬅️ Back: [Part B](PART-B-playwright-mcp.md)
+⬅️ Back: [Part B](PART-B-playwright-mcp.md) · ➡️ Next: [Part D — Install skills](PART-D-install-skills.md)

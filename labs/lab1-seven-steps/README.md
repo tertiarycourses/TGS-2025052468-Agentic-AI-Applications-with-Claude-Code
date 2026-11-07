@@ -1,6 +1,6 @@
 # Lab 1 — The 7-Step Build Workflow
 
-**Topic 1 · Claude Code Fundamentals — maps to Activity 1A + 1B (slides 30–51)**
+**Topic 1 · Claude Code Fundamentals — maps to Activity 1 (1A + 1B, slides 30–53) and PP Task 1**
 
 In this lab you build and ship a real website using the **7-step workflow** that
 frames the whole course. The deliverable is a single-page, responsive marketing
@@ -35,7 +35,7 @@ see, and a **checkpoint** to confirm before moving on.
 
 ## Before you start
 
-- Claude Code installed and signed in (terminal or the VS Code extension)
+- Claude Code signed in: terminal, VS Code extension or Desktop app. In the Desktop app, save `softwaredev-site` as a **New environment** under the prompt box. A cloud session at [claude.ai/code](https://claude.ai/code) also works once Step 5 has pushed your code to GitHub
 - A GitHub account
 - A browser
 

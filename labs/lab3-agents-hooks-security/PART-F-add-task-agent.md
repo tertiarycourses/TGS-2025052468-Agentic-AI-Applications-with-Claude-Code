@@ -1,7 +1,7 @@
-# Part C — An Add-Task Sub Agent
+# Part F (take-home) — An Add-Task Sub Agent
 
 **Objective:** Create a sub agent whose only job is to add a task to the kanban
-board from Lab 2 — and see what "delegation" actually buys you.
+board from Lab 2 Part F — and see what "delegation" actually buys you.
 
 A sub agent has **its own prompt, its own tools and its own context window**.
 The main conversation gets the summary, not the noise.
@@ -109,4 +109,4 @@ file — all in **its** context window. Your main thread only received the resul
 **Checkpoint:** `.claude/agents/add-task.md` exists, appears in `/agents`, and
 adding the Dynamics 365 task placed it correctly under In Progress.
 
-⬅️ Back: [Part B](PART-B-whatsapp-widget.md) · ➡️ Next: [Part D — Security agent](PART-D-security-agent.md)
+⬅️ Back: [Part E](PART-E-final-check.md) · ➡️ Next: [Part G — /loop](PART-G-loop.md)

@@ -6,40 +6,39 @@ Hands-on labs for the WSQ course **Agentic AI Applications with Claude Code**.
 
 ---
 
-## The four labs
+## One topic, one activity, one lab, one PP task
 
-Each lab is a self-contained folder. They build on one another — Lab 1 creates
-the website that Labs 1b, 2 and 3 then extend.
+Each lab is a self-contained folder. They build on one another: Lab 1 creates the
+website that Labs 2 and 3 then extend.
 
-| Lab | Topic | What you do | Folder |
-|---|---|---|---|
-| **1** | Topic 1 — Fundamentals | Build & deploy a site with the **7-step workflow** | [`lab1-seven-steps/`](lab1-seven-steps/) |
-| **1b** | Topic 2 — Tools & Commands | A `/publish` **custom command** + **Playwright MCP** screenshots | [`lab1b-commands-mcp/`](lab1b-commands-mcp/) |
-| **2** | Topic 3 — Skills | Install 3 **skills** and revamp the site | [`lab2-skills/`](lab2-skills/) |
-| **3** | Topic 3 — Agents & Hooks | **Hooks**, **sub agents** and **`/loop`** | [`lab3-hooks/`](lab3-hooks/) |
+| Lab | Topic | What you do | Evidence for | Folder |
+|---|---|---|---|---|
+| **1** | Topic 1 — Claude Code Fundamentals | Build and deploy a site with the **7-step workflow** | PP Task 1 | [`lab1-seven-steps/`](lab1-seven-steps/) |
+| **2** | Topic 2 — Commands, Tools and Skills | A **custom command**, **Playwright MCP** and a **skill-driven redesign** | PP Task 2 | [`lab2-commands-tools-skills/`](lab2-commands-tools-skills/) |
+| **3** | Topic 3 — Agents, Hooks and Security | A **sub agent**, your own **hooks**, and the **security** controls | PP Task 3 | [`lab3-agents-hooks-security/`](lab3-agents-hooks-security/) |
 
 ---
 
-## The thread running through all four
+## The thread running through all three
 
-Every lab demonstrates a different **trigger** — the thing that causes Claude to
-load or run something. That is the idea the whole course is organised around:
+Every lab demonstrates a different **trigger**: the thing that causes Claude to load
+or run something. The whole course is organised around that idea.
 
 | Mechanism | Trigger | Lab |
 |---|---|---|
 | `CLAUDE.md` | Every session | 1 (Step 4) |
+| Tools / MCP | On demand | 2 |
 | Skills | On demand | 2 |
-| Tools / MCP | On demand | 1b |
-| Slash commands | Manually | 1b |
-| Hooks | By event | 3 |
+| Slash commands | Manually | 2 |
 | Sub agents | By delegation | 3 |
-| `/loop` | On a schedule | 3 |
+| Hooks | By event | 3 |
+| `/loop` | On a schedule | 3 (take-home) |
 
 ---
 
 ## Before you start
 
-- **Claude Code** installed and signed in — terminal or the VS Code extension
+- **Claude Code** signed in — terminal, VS Code extension, Desktop app, or the cloud at [claude.ai/code](https://claude.ai/code)
 - **Node.js** (LTS) — [nodejs.org](https://nodejs.org)
 - A **GitHub account**
 - A browser
@@ -78,7 +77,7 @@ lab's own reference deliverable is in
 ## Legacy activity guide
 
 The earlier single-file walkthrough is kept at
-[`course-activities.md`](course-activities.md) for reference. The four lab
+[`course-activities.md`](course-activities.md) for reference. The three lab
 folders above supersede it.
 
 ---

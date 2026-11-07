@@ -1,4 +1,4 @@
-# Part C — Track the Revamp with `agent-kanban`
+# Part F — Track the Revamp with `agent-kanban`
 
 **Objective:** Use the kanban skill to turn "revamp the site" into a visible,
 ordered board of work instead of a vague intention.
@@ -60,4 +60,4 @@ shared plan, and Claude updates it as work completes.
 **Checkpoint:** `KANBAN.md` exists, reflects real state, and at least two tasks
 have moved to Done with the code changes to match.
 
-⬅️ Back: [Part B](PART-B-security.md) · ➡️ Next: [Part D — Green UX](PART-D-green-ux.md)
+⬅️ Back: [Part E](PART-E-security.md) · ➡️ Next: [Part G — Green UX](PART-G-green-ux.md)
