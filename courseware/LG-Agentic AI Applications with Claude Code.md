@@ -1,6 +1,6 @@
 # Learner Guide — Agentic AI Applications with Claude Code
 
-TGS Ref No: TGS-2025052468 · Version 2.2 · Tertiary Infotech Academy Pte Ltd (UEN 201200696W)
+TGS Ref No: TGS-2025052468 · Version 2.3 · Tertiary Infotech Academy Pte Ltd (UEN 201200696W)
 
 The Word and PDF versions carry the figures.
 
@@ -681,6 +681,16 @@ Stop it before, or act on it after. PreToolUse runs after Claude has prepared a 
 | Cap the amount: deny a refund tool call over your limit. | Announce success: play a sound or speak when the job lands. |
 
 Try it: the labs/.claude/hooks folder holds two working examples, validate-booking.js (PreToolUse) and booking-success-tts.sh (PostToolUse). The refund case is an illustration: the same pattern applies to any tool whose result should start the next step.
+
+**Hooks plus RAG: a refund chatbot that cannot make up the rules.** In Moffatt v. Air Canada (2024) a tribunal held the airline to wrong refund advice its chatbot gave. A customer-service bot built with Claude avoids that in two moves. First, RAG: a search_policy tool retrieves the matching section of your refund policy, so the reply quotes the real rule instead of guessing. Second, hooks on the check_refund tool, an MCP tool matched as mcp__shop__check_refund: PreToolUse validates the customer's request before the tool runs, and PostToolUse processes the refund once the tool reports the order eligible. One chat shows both outcomes: a S$89 refund for a cracked item goes through, and a S$2,000 request is blocked and handed to a person.
+
+| PreToolUse: validate the customer's request | PostToolUse: process the refund |
+|---|---|
+| Real order ID: no order A0007, no call. | Process the refund: read tool_response; if the order is eligible, call Stripe's Refunds API. |
+| Amount cap: positive and under S$500; a S$2,000 request goes to a person. | Send the receipt: email it to the customer. |
+| Block with a reason: exit code 2 stops the call; Claude reads your message and explains it to the customer. | Log the ticket: record RF-2291 for the audit trail. |
+
+**Ship it:** the same two hooks run in the Claude Agent SDK as Python or TypeScript callbacks. To screen the customer's raw message before Claude even reads it, for example to strip an NRIC number, add a UserPromptSubmit hook.
 
 Hooks in action on a web page. The same idea — run something automatically when an event happens — also powers engagement features on a website. These page-event hooks live in the site’s script.js and run in the visitor’s browser (not in Claude Code); you simply ask Claude Code, in plain English, to build them. You build your own in Activity 3B.
 
