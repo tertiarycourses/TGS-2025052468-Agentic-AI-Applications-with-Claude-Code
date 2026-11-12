@@ -1,6 +1,6 @@
 # Lab 3 — Agents, Hooks and Security
 
-**Topic 3 · Agents, Hooks and Security — maps to Activity 3 (slides 68–86) and PP Task 3**
+**Topic 3 · Agents, Hooks and Security — maps to Activity 3 (slides 71–90) and PP Task 3**
 
 Topic 3 gives your agent helpers, makes it react to events, and then puts controls
 around it.

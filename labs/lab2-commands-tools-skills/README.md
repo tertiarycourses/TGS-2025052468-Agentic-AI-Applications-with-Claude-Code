@@ -1,6 +1,6 @@
 # Lab 2 — Commands, Tools and Skills
 
-**Topic 2 · Commands, Tools and Skills — maps to Activity 2 (slides 54–67) and PP Task 2**
+**Topic 2 · Commands, Tools and Skills — maps to Activity 2 (slides 57–70) and PP Task 2**
 
 Lab 1 got your site built and deployed. Now you automate the repetitive parts, give
 Claude a real browser, and use a skill to lift the design.

@@ -1,6 +1,6 @@
 # Learner Guide — Agentic AI Applications with Claude Code
 
-TGS Ref No: TGS-2025052468 · Version 2.3 · Tertiary Infotech Academy Pte Ltd (UEN 201200696W)
+TGS Ref No: TGS-2025052468 · Version 2.4 · Tertiary Infotech Academy Pte Ltd (UEN 201200696W)
 
 The Word and PDF versions carry the figures.
 
@@ -136,6 +136,8 @@ Sign in once with any paid Claude plan (Pro, Max, Team, Enterprise) or a Console
 
 Pricing (as of June 2026 — verify at claude.com/pricing): Claude Code is included in subscription plans from Pro ($17/mo annual, $20 monthly) upward — Max (from $100/mo, 5× or 20× usage), Team ($20/seat standard, $100/seat premium), and Enterprise ($20/seat + usage at API rates). It’s also available pay-as-you-go via the API, billed per million tokens (input / output): Opus 4.8 $5 / $25, Sonnet 4.6 $3 / $15, Haiku 4.5 $1 / $5.
 
+**Check your limits with /usage.** Your plan is metered by the week. Type /usage in Claude Code, or open Settings → Usage in the Desktop app, to see four things: your plan and a forecast of when your current pace will hit the limit; the weekly meter (for example 62% used, resetting Friday 10:00 AM); any free limit reset you hold in reserve, and when it expires; and usage credits, pay-as-you-go credits that keep Claude working past a plan limit once you switch them on.
+
 ### 1.5 How Claude Code Works — Built-in Tools
 
 Tools are what make Claude Code agentic. Each tool result feeds back into the loop. The built-in tools fall into five categories:
@@ -157,6 +159,16 @@ Claude’s context window holds the system prompt, CLAUDE.md, auto memory, your 
 - Run /context to see what’s using space; /mcp for per-server cost.
 - Near the limit, Claude auto-compacts: it clears old tool outputs first, then summarises the conversation. Detail from early in the chat can be lost — put persistent rules in CLAUDE.md.
 - MCP tool schemas are deferred (loaded on demand); subagents run in their own context, so they don’t bloat yours.
+
+**Reading /context.** A real breakdown from claude-opus-5-5 shows 68.6k of a 1M-token window used (7%). It splits into four parts:
+
+| Part | What it holds, and what to do |
+|---|---|
+| Fixed overhead · about 35k | System prompt 3.5k, system tools 7.5k, MCP tools 7.4k, MCP server instructions 4.8k, custom agents 0.9k, memory files 1.3k and skills 9.9k, loaded on every turn. Trim it by disconnecting MCP servers and skills the project doesn’t use; run /mcp for each server’s share. |
+| Messages · 33.1k | Your conversation, and the only part that keeps growing. /compact summarises it; /clear wipes it for an unrelated task. |
+| Autocompact buffer · 33.0k | Held back so auto-compaction has room to run. It is not counted as used. |
+| Free space · 898.4k | What is still available in the 1M-token window. |
+
 ### 1.7 Memory Files
 
 Each session starts fresh. Two mechanisms carry knowledge across sessions:
@@ -177,6 +189,16 @@ Permission modes control how often Claude pauses to ask. Press Shift+Tab to cycl
 | bypassPermissions | Everything (isolated containers/VMs only) |
 
 You can also pre-approve specific commands in .claude/settings.json.
+
+**Modes in the Claude Desktop app.** The mode sits under the prompt box, after the model and effort (for example Sonnet 5.5 · Medium · Plan). Click it to open the Permissions menu for this session. Its plain-English labels map to the modes above:
+
+| Desktop label | Mode, and what it does |
+|---|---|
+| Auto | auto — Claude handles permission decisions, with background safety checks |
+| Manual | default — always asks before making changes |
+| Accept edits | acceptEdits — accepts file edits automatically; shell commands still ask |
+| Plan | plan — creates a plan before making changes and edits nothing; start Step 2 here |
+| Bypass permissions | bypassPermissions — no prompts at all; hidden until you allow it in Settings (see 1.9) |
 
 ### 1.9 Dangerous Skip Permissions (bypassPermissions)
 
@@ -199,9 +221,9 @@ Allow bypass mode in VS Code and Claude Desktop. Both apps hide the Bypass permi
 
 - 1 Gear icon — bottom-left of VS Code.
 - 2 Settings — or press Ctrl+, (Cmd+, on Mac); search “Claude Code” and tick “Allow dangerously skip permissions”, then pick Bypass permissions in the prompt-box mode menu.
-*Figure 4 — Claude Desktop: Settings → Claude Code → Sessions*
+*Figure 4 — Claude Desktop: Settings → Code → Local development*
 
-- 1 Settings → Claude Code — open the Claude Code page in Desktop settings.
+- 1 Settings → Code — open the Code page in Desktop settings.
 - 2 Allow bypass permissions mode — toggle it on to make Bypass available in the mode menu.
 - 3 Keep computer awake (optional) — stops the machine sleeping during long runs.
 ### 1.10 Managing Sessions
@@ -401,7 +423,7 @@ Project scope — <project>/.claude/: settings.json (shared) and settings.local.
 
 User scope applies everywhere; project scope is committed so your whole team shares the same commands, skills, agents and settings.
 
-User level vs project level — where each customisation lives. Every customisation can be stored at two levels. User level (~/.claude/) applies to ALL your projects; project level (<project>/.claude/) applies only to that ONE project and travels with it in git (slide 56):
+User level vs project level — where each customisation lives. Every customisation can be stored at two levels. User level (~/.claude/) applies to ALL your projects; project level (<project>/.claude/) applies only to that ONE project and travels with it in git (slide 59):
 
 Commands — user: ~/.claude/commands/<name>.md; project: <project>/.claude/commands/<name>.md.
 

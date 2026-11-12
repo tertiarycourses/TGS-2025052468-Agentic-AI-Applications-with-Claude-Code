@@ -1,6 +1,6 @@
 # Lab 1 — The 7-Step Build Workflow
 
-**Topic 1 · Claude Code Fundamentals — maps to Activity 1 (1A + 1B, slides 30–53) and PP Task 1**
+**Topic 1 · Claude Code Fundamentals — maps to Activity 1 (1A + 1B, slides 31–56) and PP Task 1**
 
 In this lab you build and ship a real website using the **7-step workflow** that
 frames the whole course. The deliverable is a single-page, responsive marketing
