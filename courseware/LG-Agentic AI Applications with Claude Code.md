@@ -1,6 +1,6 @@
 # Learner Guide — Agentic AI Applications with Claude Code
 
-TGS Ref No: TGS-2025052468 · Version 2.4 · Tertiary Infotech Academy Pte Ltd (UEN 201200696W)
+TGS Ref No: TGS-2025052468 · Version 2.5 · Tertiary Infotech Academy Pte Ltd (UEN 201200696W)
 
 The Word and PDF versions carry the figures.
 
@@ -447,12 +447,15 @@ Custom commands are reusable prompts saved as Markdown files. Typing a slash com
 - Arguments: use $ARGUMENTS to pass input into the command.
 ### 2.2 MCP Tools
 
-The Model Context Protocol (MCP) is an open standard that lets Claude Code connect to external tools and data sources through a common interface.
+The Model Context Protocol (MCP) is an open standard that connects Claude Code to external tools and data through one common interface. Three parts make it work:
 
-- MCP Server — exposes tools/data (e.g. Playwright, GitHub, databases).
-- MCP Client — Claude Code connects to servers and calls their tools.
-- Transport — stdio or HTTP/SSE; transport-agnostic.
-- Tools — each server publishes callable actions Claude can use.
+- MCP Host — the AI app you talk to. Claude Code is the host: it starts a client for every server you add.
+- MCP Client — lives inside the host. One client per server, and each keeps its own connection open.
+- MCP Server — a program that offers tools and data, such as Playwright, GitHub, Notion or your own database.
+- Transport — how client and server talk. Pick it by where the server runs:
+- stdio, for a server on your machine — Claude Code launches the server as a local process. Choose it for tools that need your files, browser or scripts, such as Playwright MCP.
+- HTTP, for a server in the cloud — Streamable HTTP is today’s remote transport. Choose it for hosted services such as Notion, added with claude mcp add --transport http.
+- SSE, for older remote servers — Server-Sent Events came first and is now deprecated. Choose it only when a hosted server gives you an /sse address and no HTTP one.
 
 Playwright MCP lets Claude drive a real browser — open pages, click, fill forms and capture screenshots.
 
@@ -714,6 +717,36 @@ Try it: the labs/.claude/hooks folder holds two working examples, validate-booki
 
 **Ship it:** the same two hooks run in the Claude Agent SDK as Python or TypeScript callbacks. To screen the customer's raw message before Claude even reads it, for example to strip an NRIC number, add a UserPromptSubmit hook.
 
+**Worked example: no customer ID, no refund; every refund, one receipt.** Two short scripts wrap an issue_refund tool, matched as mcp__shop__issue_refund. check_customer.py runs on PreToolUse: a missing or unknown customer ID prints a deny decision, so the refund never starts and Claude asks the customer for the ID. refund_receipt.py runs on PostToolUse: it returns one receipt with five fixed fields as additionalContext, so every customer gets the same structure. A failed refund fires PostToolUseFailure, so no receipt goes out. Print tool_response once before you parse it: its shape depends on the tool.
+
+```
+# hooks/check_customer.py  ·  PreToolUse on mcp__shop__issue_refund
+import json, re, sys
+call  = json.load(sys.stdin)
+cid   = call["tool_input"].get("customer_id", "")
+known = open("data/customers.txt").read().split()
+if not re.fullmatch(r"C\d{6}", cid) or cid not in known:
+    print(json.dumps({"hookSpecificOutput": {
+        "hookEventName": "PreToolUse",
+        "permissionDecision": "deny",
+        "permissionDecisionReason": "No valid customer ID. Ask for it first."}}))
+```
+
+```
+# hooks/refund_receipt.py  ·  PostToolUse on mcp__shop__issue_refund
+import json, sys
+call = json.load(sys.stdin)
+ask, done = call["tool_input"], call["tool_response"]
+receipt = {"refund_id":   done["refund_id"],
+           "customer_id": ask["customer_id"],
+           "order_id":    ask["order_id"],
+           "amount_sgd":  ask["amount"],
+           "status":      "refunded"}
+print(json.dumps({"hookSpecificOutput": {
+    "hookEventName": "PostToolUse",
+    "additionalContext": "Reply with this receipt: " + json.dumps(receipt)}}))
+```
+
 Hooks in action on a web page. The same idea — run something automatically when an event happens — also powers engagement features on a website. These page-event hooks live in the site’s script.js and run in the visitor’s browser (not in Claude Code); you simply ask Claude Code, in plain English, to build them. You build your own in Activity 3B.
 
 Demo 1 — Pop-up after 10 seconds. A timer starts when the page loads; stay on the page for 10 seconds and a dialog pops up with a key message — no click needed.
@@ -736,7 +769,7 @@ Demo 2 — Voice message on chatbot click. Click the chat icon and the assistant
 *Figure 20 — An event hook — clicking the chat icon plays a voice message and opens the chat panel*
 
 - 1 Click the chat icon — the round WhatsApp button (bottom-right) is the trigger; the click event fires the hook.
-- 2 Voice greeting + welcome — the assistant says “Hi, I am your assistant. How can I help you today?” as the panel opens.
+- 2 Voice greeting + welcome — the assistant says “I am an IT assistant. How can I help you?” as the panel opens.
 - 3 Quick-reply topics — one-tap buttons for the most common questions, so the visitor need not type.
 - 4 Hand-off to WhatsApp — picking a topic opens WhatsApp with the question ready to send.
 ```
@@ -744,7 +777,7 @@ Demo 2 — Voice message on chatbot click. Click the chat icon and the assistant
 chatIcon.addEventListener('click', () => {
   openPanel();
   speechSynthesis.speak(new SpeechSynthesisUtterance(
-    'Hi, I am your assistant. How can I help you today?'));
+    'I am an IT assistant. How can I help you?'));
 });
 ```
 
@@ -820,20 +853,25 @@ npx skills add https://github.com/coreyhaines31/marketingskills --skill lead-mag
 - Run the UI/UX agent, apply improvements, then commit and push.
 ### Activity 3B — Build Your Own Hooks
 
-Goal: Build the two hooks from the demo: a pop-up 10 seconds after the page loads, and a voice message when a visitor clicks the chatbot icon.
+Goal: Build a pop-up that opens 10 seconds after the page loads, then a text-based RAG chatbot that greets the visitor by voice when they click its icon.
 
-Both are page hooks. They live in script.js and run in the visitor’s browser, and you do not write them by hand: you ask Claude Code. Claude Code’s own hooks are a different thing: shell commands in .claude/settings.json that fire on its lifecycle events.
+The pop-up and the voice greeting are page hooks. They live in script.js and run in the visitor’s browser, and you do not write them by hand: you ask Claude Code. Claude Code’s own hooks are a different thing: shell commands in .claude/settings.json that fire on its lifecycle events.
 
 #### Step-by-step
 
 - Add the pop-up hook — ask Claude Code:
 > Add a pop-up dialog hook to my website. Start a timer when the page loads and open the dialog after 10 seconds. Show it once per visitor using localStorage. Give it a headline, one short sentence and a “Got it” button. Dim the page behind it. Use vanilla JS in script.js.
 
-- Add the chatbot icon and voice hook — ask Claude Code:
-> Add a round chatbot icon fixed to the bottom-right corner of every page. When the visitor clicks it, open a small chat panel and speak this with the Web Speech API: “Hi, I am your assistant. How can I help you today?”
+- Build the text-based RAG chatbot — ask Claude Code:
+> Build a text-based RAG chatbot for my website. It is an IT assistant. Create knowledge.json with 10 short IT help articles (password reset, VPN, Wi-Fi, printer, phishing). Add a round chatbot icon at the bottom-right of every page that opens a chat panel. For each question, take the two best-matching articles, build the reply only from them and name the source. If nothing matches, say you don’t know. Use vanilla JS, with no API key and no backend.
 
-- Test with Playwright — ask Claude to use the Playwright MCP tool to wait 10 seconds and confirm the dialog opens once, then click the icon and confirm the panel opens. Playwright cannot hear the voice, so click the icon yourself and listen.
-- Push to GitHub and confirm both hooks work on the live site.
+- Add the voice hook — ask Claude Code:
+> Add a voice hook to the chatbot. When the visitor clicks the chatbot icon, speak this with the Web Speech API: “I am an IT assistant. How can I help you?”
+
+Why this is RAG: the chatbot retrieves the matching articles and replies only from them. A template writes the reply here; in production Claude writes it, as in 3.2.
+
+- Test with Playwright — ask Claude to use the Playwright MCP tool to wait 10 seconds and confirm the dialog opens once, then click the icon, ask “How do I reset my password?” and confirm the reply names its source article. Playwright cannot hear the voice, so click the icon yourself and listen.
+- Push to GitHub and confirm the pop-up, the chatbot and the voice greeting work on the live site.
 - Keep your evidence — take a screenshot of a hook you built, for PP Task 3.
 
 Tip: browsers block sound until the visitor interacts with the page, so the voice plays on the click, not on page load.
@@ -877,7 +915,7 @@ The hands-on labs live in the labs folder of the course repository, so you can c
 |---|---|
 | Lab 1 — labs/lab1-seven-steps/ | Topic 1, Activity 1, PP Task 1. The 7-step build workflow end to end: goal & features, plan mode, execute, /init context, commit to GitHub, GitHub Pages deployment and CI/CD. Includes a finished reference site and three sample sites (bridal booking, interior design, lead generator). |
 | Lab 2 — labs/lab2-commands-tools-skills/ | Topic 2, Activity 2, PP Task 2. Build a /gitpush custom slash command; install Playwright MCP and screenshot the live site into the README; install skills at project level and use them to harden, plan and redesign the Lab 1 website. |
-| Lab 3 — labs/lab3-agents-hooks-security/ | Topic 3, Activity 3, PP Task 3. A security-scan sub agent that writes security-scan.json; a pop-up hook; a voice hook on the chatbot icon; a Stop hook in Claude Code; then the final test, secure and deploy. An add-task sub agent and /loop are take-home parts. |
+| Lab 3 — labs/lab3-agents-hooks-security/ | Topic 3, Activity 3, PP Task 3. A security-scan sub agent that writes security-scan.json; a pop-up hook; a RAG chatbot with a voice hook; a Stop hook in Claude Code; then the final test, secure and deploy. An add-task sub agent and /loop are take-home parts. |
 
 Labs repository: https://github.com/tertiarycourses/TGS-2025052468-Agentic-AI-Applications-with-Claude-Code/tree/main/labs
 
