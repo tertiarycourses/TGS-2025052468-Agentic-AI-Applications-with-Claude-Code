@@ -1,6 +1,6 @@
 # Lab 3 — Agents, Hooks and Security
 
-**Topic 3 · Agents, Hooks and Security — maps to Activity 3 (slides 71–91) and PP Task 3**
+**Topic 3 · Agents, Hooks and Security — maps to Activity 3 (slides 71–90) and PP Task 3**
 
 Topic 3 gives your agent helpers, makes it react to events, and then puts controls
 around it.
@@ -21,7 +21,7 @@ around it.
 |---|---|---|---|
 | A | 3A | A security-scan sub agent writing JSON | [`PART-A-security-agent.md`](PART-A-security-agent.md) |
 | B | 3B | A pop-up hook that fires after 10 seconds | [`PART-B-popup-hook.md`](PART-B-popup-hook.md) |
-| C | 3B | A text-based RAG chatbot, and a voice greeting when its icon is clicked | [`PART-C-voice-hook.md`](PART-C-voice-hook.md) |
+| C | 3B | A text-based RAG chatbot, and a voice greeting when its icon is clicked | [`PART-C-voice-hook.md`](PART-C-voice-hook.md) · finished version in [`reference-chatbot/`](reference-chatbot/) |
 | D | 3B | A Claude Code hook that fires when a task finishes | [`PART-D-claude-code-hooks.md`](PART-D-claude-code-hooks.md) |
 | E | 3C | Test, secure and deploy the final version | [`PART-E-final-check.md`](PART-E-final-check.md) |
 | F | Take-home | An add-task sub agent | [`PART-F-add-task-agent.md`](PART-F-add-task-agent.md) |

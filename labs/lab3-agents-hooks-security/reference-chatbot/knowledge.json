@@ -1,0 +1,12 @@
+[
+  {"id": "kb-01", "title": "Reset your password", "answer": "Go to the self-service portal and choose Forgot password. Confirm the code sent to your phone, then set a new password of at least 12 characters. If your account is locked, wait 15 minutes or ask the helpdesk to unlock it."},
+  {"id": "kb-02", "title": "Connect to the VPN", "answer": "Open the VPN client, pick the Singapore gateway and sign in with your staff ID. Approve the prompt in your authenticator app. If it fails, check that your laptop clock is correct and try again."},
+  {"id": "kb-03", "title": "Connect to office Wi-Fi", "answer": "Choose the Staff network and sign in with your staff ID and password. Guests use the Guest network with the daily code from reception. Forget the network and rejoin if it keeps dropping."},
+  {"id": "kb-04", "title": "Set up a printer", "answer": "Open Settings, then Printers, and add the printer named after your floor, for example Level-3-Colour. Print a test page. If the job is stuck, cancel it and restart the print queue."},
+  {"id": "kb-05", "title": "Report a phishing email", "answer": "Do not click any link or open any attachment. Use the Report Phishing button in your mail app, then delete the message. If you already entered your password, reset it now and tell the helpdesk."},
+  {"id": "kb-06", "title": "Request software or system access", "answer": "Raise a request in the service catalogue and name the software and your manager. Approved requests install within two working days. Licensed software needs a cost centre."},
+  {"id": "kb-07", "title": "Set up email on your phone", "answer": "Install the mail app from the company portal, sign in with your staff email and approve the device. Set a screen lock of at least six digits, or the mailbox will not sync."},
+  {"id": "kb-08", "title": "Share a file with someone outside the company", "answer": "Upload the file to the shared drive, choose Share and enter the person's email. Set the link to expire in seven days. Restricted files cannot be shared outside the company."},
+  {"id": "kb-09", "title": "Book a meeting room", "answer": "Open your calendar, create the meeting and choose a room from the room list. The panel outside the room shows your booking. Release the room if your plans change."},
+  {"id": "kb-10", "title": "Replace or repair a laptop", "answer": "Back up your files to the shared drive, then raise a hardware request with the fault and the asset tag under the laptop. A loan laptop is issued while yours is repaired."}
+]

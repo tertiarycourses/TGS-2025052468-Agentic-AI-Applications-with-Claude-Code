@@ -97,6 +97,9 @@ listen.
 
 ---
 
+Compare your build with the finished version in [`reference-chatbot/`](reference-chatbot/),
+the site shown on the Demo 2 slide.
+
 **Checkpoint:** Clicking the icon opens the panel, you hear "I am an IT assistant.
 How can I help you?", and the chatbot answers a password question from its
 knowledge base.

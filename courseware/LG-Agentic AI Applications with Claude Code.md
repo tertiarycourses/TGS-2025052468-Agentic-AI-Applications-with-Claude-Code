@@ -1,6 +1,6 @@
 # Learner Guide — Agentic AI Applications with Claude Code
 
-TGS Ref No: TGS-2025052468 · Version 2.5 · Tertiary Infotech Academy Pte Ltd (UEN 201200696W)
+TGS Ref No: TGS-2025052468 · Version 2.6 · Tertiary Infotech Academy Pte Ltd (UEN 201200696W)
 
 The Word and PDF versions carry the figures.
 
@@ -764,14 +764,14 @@ setTimeout(() => {
 }, 10000);               // 10 s after load
 ```
 
-Demo 2 — Voice message on chatbot click. Click the chat icon and the assistant speaks a greeting as the chat panel opens, then offers one-tap topics that open WhatsApp.
+Demo 2 — Voice message on a RAG chatbot. Click the chat icon and the assistant speaks a greeting as the chat panel opens, then answers typed questions from its own help articles.
 
-*Figure 20 — An event hook — clicking the chat icon plays a voice message and opens the chat panel*
+*Figure 20 — An event hook — clicking the chat icon plays a voice message and opens the RAG chatbot*
 
-- 1 Click the chat icon — the round WhatsApp button (bottom-right) is the trigger; the click event fires the hook.
+- 1 Click the chat icon — the round chat button (bottom-right) is the trigger; the click event fires the hook.
 - 2 Voice greeting + welcome — the assistant says “I am an IT assistant. How can I help you?” as the panel opens.
-- 3 Quick-reply topics — one-tap buttons for the most common questions, so the visitor need not type.
-- 4 Hand-off to WhatsApp — picking a topic opens WhatsApp with the question ready to send.
+- 3 Ask in plain text — type a question; the chatbot retrieves the best-matching articles from knowledge.json.
+- 4 Answer with its source — the reply is built only from what it retrieved and names the article; with no match it says it does not know.
 ```
 // script.js — Web Speech API (speech synthesis)
 chatIcon.addEventListener('click', () => {
