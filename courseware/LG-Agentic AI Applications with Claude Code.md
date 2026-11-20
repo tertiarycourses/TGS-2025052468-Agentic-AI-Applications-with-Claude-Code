@@ -1,6 +1,6 @@
 # Learner Guide — Agentic AI Applications with Claude Code
 
-TGS Ref No: TGS-2025052468 · Version 2.6 · Tertiary Infotech Academy Pte Ltd (UEN 201200696W)
+TGS Ref No: TGS-2025052468 · Version 2.7 · Tertiary Infotech Academy Pte Ltd (UEN 201200696W)
 
 The Word and PDF versions carry the figures.
 
@@ -38,7 +38,9 @@ Anthropic offers several Claude products — all powered by the same Claude mode
 - Claude Code — agentic coding tool in your terminal, IDE, desktop app and browser.
 - Claude Cowork — desktop agent for non-developers to automate files and tasks.
 - Claude Design — generates polished UI and frontend designs.
+- Claude Artifacts — turns a chat into a live app, dashboard or page you can share (all plans, Free included).
 - Claude for Microsoft — Claude inside Microsoft 365 and Outlook.
+- Claude for Google Workspace — a Claude sidebar in Google Docs, Sheets and Slides (beta, paid plans).
 - Claude for Chrome — browser agent that navigates and acts on the web for you.
 - Claude for Science — speeds up research workflows for scientists and labs.
 #### The evolution of AI engineering (2023 → 2026)
@@ -132,9 +134,9 @@ Claude Code runs on four surfaces — the same agentic loop everywhere:
 - Desktop app: a full GUI for parallel sessions, scheduled tasks (Routines), and connectors.
 - Cloud (claude.ai/code): open it in any browser, with nothing to install. The session runs on an Anthropic-managed VM, works on a clone of your GitHub repo, and keeps running after you close your laptop.
 
-Sign in once with any paid Claude plan (Pro, Max, Team, Enterprise) or a Console account.
+Sign in once with any paid Claude plan (Pro, Max, Ultra, Team, Enterprise) or a Console account.
 
-Pricing (as of June 2026 — verify at claude.com/pricing): Claude Code is included in subscription plans from Pro ($17/mo annual, $20 monthly) upward — Max (from $100/mo, 5× or 20× usage), Team ($20/seat standard, $100/seat premium), and Enterprise ($20/seat + usage at API rates). It’s also available pay-as-you-go via the API, billed per million tokens (input / output): Opus 4.8 $5 / $25, Sonnet 4.6 $3 / $15, Haiku 4.5 $1 / $5.
+Pricing (as of 20 Nov 2026, before tax — verify at claude.com/pricing): Claude Code is included in every paid plan: Pro ($17/mo billed annually, $20 monthly), Max ($100/mo, 5× Pro usage plus $100 a month in API credits), Ultra ($200/mo, 10× Pro weekly usage, no 5-hour limit for verified accounts, $200 in API credits), Team ($20/seat standard and $100/seat premium billed annually; $25 and $125 monthly) and Enterprise ($20/seat billed annually, 20-seat minimum, plus usage at API rates). The Free plan does not include Claude Code. It is also available pay-as-you-go via the API, billed per million tokens (input / output): Fable 5.2 $8 / $40, Opus 5.5 $4 / $20, Sonnet 5.5 $2 / $10, Haiku 5.5 $0.10 / $0.50 (prompts up to 100K tokens).
 
 **Check your limits with /usage.** Your plan is metered by the week. Type /usage in Claude Code, or open Settings → Usage in the Desktop app, to see four things: your plan and a forecast of when your current pace will hit the limit; the weekly meter (for example 62% used, resetting Friday 10:00 AM); any free limit reset you hold in reserve, and when it expires; and usage credits, pay-as-you-go credits that keep Claude working past a plan limit once you switch them on.
 

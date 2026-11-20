@@ -57,12 +57,12 @@ By the end of this course, learners will be able to:
 
 ## Courseware
 
-The current public courseware package (slide deck v29.0, 19 Nov 2026):
+The current public courseware package (slide deck v30.0, 20 Nov 2026):
 
 | Material | Editable | PDF |
 |---|---|---|
-| Slide deck (95 slides) | [PPTX](<courseware/Agentic AI Applications with Claude Code - v29.pptx>) | [PDF](<courseware/Agentic AI Applications with Claude Code - v29.pdf>) |
-| Learner Guide (v2.6) | [DOCX](<courseware/LG-Agentic AI Applications with Claude Code.docx>) | [PDF](<courseware/LG-Agentic AI Applications with Claude Code.pdf>) |
+| Slide deck (95 slides) | [PPTX](<courseware/Agentic AI Applications with Claude Code - v30.pptx>) | [PDF](<courseware/Agentic AI Applications with Claude Code - v30.pdf>) |
+| Learner Guide (v2.7) | [DOCX](<courseware/LG-Agentic AI Applications with Claude Code.docx>) | [PDF](<courseware/LG-Agentic AI Applications with Claude Code.pdf>) |
 | Lesson Plan (v2.7) | [DOCX](<courseware/LP-Agentic AI Applications with Claude Code.docx>) | [PDF](<courseware/LP-Agentic AI Applications with Claude Code.pdf>) |
 
 The Learner Guide is also available as [Markdown](<courseware/LG-Agentic AI Applications with Claude Code.md>).
@@ -72,9 +72,9 @@ The Learner Guide is also available as [Markdown](<courseware/LG-Agentic AI Appl
 ```
 .
 ├── courseware/                  # Trainer & learner materials
-│   ├── Agentic AI Applications with Claude Code - v29.pptx   # Slide deck (95 slides)
-│   ├── Agentic AI Applications with Claude Code - v29.pdf
-│   ├── LG-Agentic AI Applications with Claude Code.docx      # Learner Guide  (v2.6)
+│   ├── Agentic AI Applications with Claude Code - v30.pptx   # Slide deck (95 slides)
+│   ├── Agentic AI Applications with Claude Code - v30.pdf
+│   ├── LG-Agentic AI Applications with Claude Code.docx      # Learner Guide  (v2.7)
 │   ├── LG-Agentic AI Applications with Claude Code.pdf
 │   ├── LG-Agentic AI Applications with Claude Code.md
 │   ├── LP-Agentic AI Applications with Claude Code.docx      # Lesson Plan    (v2.7)
